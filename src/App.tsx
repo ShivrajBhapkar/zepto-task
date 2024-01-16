@@ -1,34 +1,112 @@
 import './App.css'
 import { v4 as uuidv4 } from 'uuid';
 import MultiSelectTailwind from './components/MultiSelectTailwind'
-import person1 from "./assets/person1.jpg"
-import person2 from "./assets/person2.jpg"
-import person3 from "./assets/person3.jpg"
-import person4 from "./assets/person4.jpg"
-import person5 from "./assets/person5.jpg"
-import person6 from "./assets/person6.jpg"
-import person7 from "./assets/person7.jpg"
+
 function App() {
-// Used uuid for optimization
-  const items = [
-    { id: uuidv4(), value: "Oliver Turner", icon: person1 },
-    { id: uuidv4(), value: "Emily Williams", icon: person2 },
-    { id: uuidv4(), value: "Jacob Smith", icon: person3 },
-    { id: uuidv4(), value: "Isabella Brown", icon: person4 },
-    { id: uuidv4(), value: "William Wilson", icon: person5 },
-    { id: uuidv4(), value: "Ava Johnson", icon: person6 },
-    { id: uuidv4(), value: "Benjamin Evans", icon: person7 },
-    { id: uuidv4(), value: "Emma Brown", icon: person2 },
-    { id: uuidv4(), value: "Henry Turner", icon: person4 },
-    { id: uuidv4(), value: "Grace Williams", icon: person1 },
+  type profileType = {
+    id: string;
+    name: string;
+    email: string;
+    image?: string;
+  };
+  const persons: profileType[] = [
+    {
+     id:uuidv4(),
+      name: "John Smith",
+      email: "john.smith@email.com",
+      image: "/images/person1.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Emma Johnson",
+      email: " emma.johnson@email.com",
+      image: "/images/person2.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "James Wilson",
+      email: "james.wilson@email.com",
+      image: "/images/person3.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Sarah Davis",
+      email: "sarah.davis@email.com",
+      image: "/images/person4.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Michael Taylor",
+      email: "michael.taylor@email.com",
+      image: "/images/person5.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Emily Clark",
+      email: "emily.clark@email.com",
+      image: "/images/person6.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Robert Turner",
+      email: "robert.turner@email.com",
+      image: "/images/person7.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Olivia White",
+      email: "olivia.white@email.com",
+      image: "/images/person8.jpeg",
+    },
+    {
+      id: uuidv4(),
+      name: "William Harris",
+      email: "william.harris@email.com",
+      image: "/images/person9.jpeg",
+    },
+    {
+      id: uuidv4(),
+      name: "Ava Robinson",
+      email: "ava.robinson@email.com",
+      image: "/images/person3.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "David Miller",
+      email: "david.miller@email.com",
+      image: "/images/person4.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Sophia Martin",
+      email: "sophia.martin@email.com",
+      image: "/images/person5.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Christopher Hall",
+      email: "christopher.hall@email.com",
+      image: "/images/person6.jpg",
+    },
+    {
+      id: uuidv4(),
+      name: "Amelia Allen",
+      email: "amelia.allen@email.com",
+      image: "/images/person8.jpeg",
+    },
+    {
+      id: uuidv4(),
+      name: "Daniel Carter",
+      email: "daniel.carter@email.com",
+      image: "/images/person9.jpeg",
+    },
+    
   ];
   return (
     <>
       <div  className='text-red-500'>
         <MultiSelectTailwind
-          raised={true}
-          items={items}
-          placeholder="Select an Item"
+          persons={persons}
         />
       </div>
     
