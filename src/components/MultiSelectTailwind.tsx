@@ -119,15 +119,15 @@ const MultiSelectTailwind: React.FC<MultiSelectProps> = ({
             className={`w-full ${raised ? "shadow-md" : ""} p-2 rounded`}
             ref={wrapperRef}
         >
-            <div className="flex flex-wrap items-center border-b-2 border-blue-700">
+            <div className="flex flex-wrap items-center border-b-2 border-blue-700 z-10">
                 {selectedItems.map(({ id, value, icon }) => (
-                    <div className="flex flex-col " key={id}>
+                    <div className="flex flex-col rounded-full border-2 border-gray-400 m-2" key={id}>
                         <span
                             className="bg-blue-100 text-blue-500  rounded m-2 text-sm cursor-pointer flex items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {typeof icon === 'string' && (
-                                <img src={icon} alt={value} height="15px" width="15px" className="mr-1" />
+                                <img src={icon} alt={value} height="22px" width="22px" className="mr-1" />
                             )}
                             {value}
                             <AiOutlineClose
@@ -162,7 +162,7 @@ const MultiSelectTailwind: React.FC<MultiSelectProps> = ({
             )}
             {opened && (
                 <ul
-                    className={`mt-4 flex flex-col items-center justify-start left-0 absolute overflow-y-auto ${raised ? "shadow-lg shadow-gray-500" : ""}`}
+                    className={`mt-4 flex flex-col items-center z-50  justify-start left-0 absolute overflow-y-auto ${raised ? "shadow-lg shadow-gray-500" : ""}`}
                     style={{
                         top: (inputRef.current?.offsetTop || 3) + (inputRef.current?.offsetHeight || 3),
                         left: inputRef.current?.offsetLeft || 3,
@@ -178,7 +178,7 @@ const MultiSelectTailwind: React.FC<MultiSelectProps> = ({
                         filteredItems.map(({ id, value, icon }) => (
                             <li
                                 key={id}
-                                className="cursor-pointer w-full  pl-2 space-y-2 py-1 max-w-18 min-w-10 text-blue-500 flex items-center justify-start hover:bg-yellow-100"
+                                className="cursor-pointer w-full  pl-2 space-y-2 py-1 max-w-18 min-w-10 text-blue-500 flex items-center justify-start"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     onDropDownClicked({ id, value, icon });
